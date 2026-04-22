@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skolreformer · Grundskola, förskola & fritidshem</title>
+<meta name="description" content="Tidsordnad översikt av de största skolreformerna i Sverige — för skolchefer och rektorer inom grundskola, förskola och fritidshem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-main: #F2ECDE;
+    --bg-paper: #FAF5E8;
+    --bg-card: #FDFAF0;
+    --text-primary: #0F1B2D;
+    --text-secondary: #4A5567;
+    --text-muted: #8B8578;
+    --accent-red: #8B2E2E;
+    --accent-red-dark: #6B1F1F;
+    --accent-blue: #1E3A5F;
+    --accent-blue-dark: #122542;
+    --accent-gold: #A87934;
+    --divider: #D4CCB8;
+    --divider-strong: #B8AD93;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.55;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Paper texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(139, 46, 46, 0.025) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+  }
+
+  main, header, nav, footer {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============ HEADER ============ */
+  header.top {
+    position: sticky;
+    top: 0;
+    background: rgba(242, 236, 222, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--divider);
+    z-index: 100;
+    padding: 14px 0;
+  }
+
+  .top-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    background: var(--accent-red);
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: var(--bg-paper);
+    border-radius: 50%;
+  }
+
+  .year-nav {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .year-btn {
+    background: transparent;
+    border: 1px solid var(--divider);
+    color: var(--text-secondary);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .year-btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-paper);
+    border-color: var(--text-primary);
+  }
+
+  .year-btn.active {
+    background: var(--accent-red);
+    color: var(--bg-paper);
+    border-color: var(--accent-red);
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 120px 0 100px;
+    border-bottom: 1px solid var(--divider);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 46, 46, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--accent-red);
+  }
+
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 8vw, 112px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-red);
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
+
+  .hero-lede {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin-bottom: 56px;
+    font-variation-settings: "opsz" 36, "SOFT" 50;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    padding-top: 32px;
+    border-top: 1px solid var(--divider);
+  }
+
+  .meta-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .meta-value {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-primary);
+    font-variation-settings: "opsz" 36;
+  }
+
+  /* ============ INTRO / HOW TO READ ============ */
+  .intro {
+    padding: 80px 0;
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .intro-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .intro-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+  }
+
+  .intro-text {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--text-primary);
+    font-variation-settings: "opsz" 36, "SOFT" 50;
+  }
+
+  .intro-text p + p {
+    margin-top: 20px;
+  }
+
+  .intro-text strong {
+    font-weight: 600;
+    color: var(--accent-red);
+  }
+
+  /* ============ TIMELINE SECTIONS ============ */
+  .timeline-section {
+    padding: 100px 0 40px;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .section-header {
+    max-width: 1280px;
+    margin: 0 auto 60px;
+    padding: 0 40px;
+    display: flex;
+    align-items: baseline;
+    gap: 40px;
+    border-bottom: 2px solid var(--text-primary);
+    padding-bottom: 24px;
+  }
+
+  .section-year {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(60px, 10vw, 140px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    font-variation-settings: "opsz" 144;
+  }
+
+  .section-subtitle {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: -0.01em;
+    max-width: 420px;
+    padding-bottom: 18px;
+  }
+
+  .reform-list {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ============ REFORM CARD ============ */
+  .reform {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--divider);
+    align-items: start;
+  }
+
+  .reform:last-child {
+    border-bottom: none;
+  }
+
+  .reform-date {
+    position: sticky;
+    top: 100px;
+  }
+
+  .date-big {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--accent-red);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+    font-variation-settings: "opsz" 72, "SOFT" 30;
+  }
+
+  .date-small {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+  }
+
+  .reform-body {
+    min-width: 0;
+  }
+
+  .reform-prop {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--bg-paper);
+    background: var(--text-primary);
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+  }
+
+  .reform-prop.beslutad {
+    background: var(--accent-blue);
+  }
+
+  .reform-prop.ikraft {
+    background: var(--accent-gold);
+  }
+
+  .reform-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    font-variation-settings: "opsz" 72, "SOFT" 30;
+  }
+
+  .reform-summary {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+  }
+
+  .reform-summary ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .reform-summary li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+  }
+
+  .reform-summary li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent-red);
+    font-weight: 500;
+  }
+
+  .reform-summary strong {
+    font-weight: 600;
+    color: var(--accent-red);
+  }
+
+  /* ============ ROLE BOXES ============ */
+  .role-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .role-box {
+    padding: 24px 26px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .role-box.chef {
+    background: var(--accent-blue);
+    color: #E8E1CE;
+  }
+
+  .role-box.rektor {
+    background: var(--accent-red);
+    color: #F5E8D4;
+  }
+
+  .role-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .role-label::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .role-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    color: #FDFAF0;
+    font-variation-settings: "opsz" 36, "SOFT" 50;
+  }
+
+  .role-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .role-item {
+    border-bottom: 1px solid rgba(253, 250, 240, 0.15);
+  }
+
+  .role-item:last-child {
+    border-bottom: none;
+  }
+
+  .role-item-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    text-align: left;
+    cursor: pointer;
+    transition: opacity 0.2s var(--ease-out);
+  }
+
+  .role-item-toggle:hover {
+    opacity: 0.85;
+  }
+
+  .role-item-toggle:focus-visible {
+    outline: 2px solid rgba(253, 250, 240, 0.6);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  .role-item-label {
+    flex: 1;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .role-item-label::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #FDFAF0;
+    opacity: 0.6;
+    font-weight: 700;
+  }
+
+  .role-item-arrow {
+    flex-shrink: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    opacity: 0.55;
+    transition: transform 0.28s var(--ease-out);
+    line-height: 1.55;
+  }
+
+  .role-item.open .role-item-arrow {
+    transform: rotate(90deg);
+    opacity: 0.9;
+  }
+
+  .role-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s var(--ease-out);
+  }
+
+  .role-item.open .role-item-body {
+    max-height: 800px;
+  }
+
+  .role-item-body-inner {
+    padding: 2px 0 16px 16px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(253, 250, 240, 0.88);
+  }
+
+  .role-item-body-inner p {
+    margin: 0 0 10px 0;
+  }
+
+  .role-item-body-inner p:last-child {
+    margin-bottom: 0;
+  }
+
+  .role-item-source {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(253, 250, 240, 0.2);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.01em;
+    color: rgba(253, 250, 240, 0.65);
+    line-height: 1.55;
+  }
+
+  /* ============ SOURCE BUTTONS ============ */
+  .source-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .source-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-card);
+    border: 1px solid var(--divider-strong);
+    padding: 10px 16px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.25s var(--ease-out);
+    letter-spacing: -0.005em;
+  }
+
+  .source-btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-paper);
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+  }
+
+  .source-btn .arrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    transition: transform 0.25s var(--ease-out);
+  }
+
+  .source-btn:hover .arrow {
+    transform: translate(2px, -2px);
+  }
+
+  .source-btn.primary {
+    background: var(--accent-red);
+    color: var(--bg-paper);
+    border-color: var(--accent-red);
+  }
+
+  .source-btn.primary:hover {
+    background: var(--accent-red-dark);
+    border-color: var(--accent-red-dark);
+  }
+
+  /* ============ ONGOING INVESTIGATIONS ============ */
+  .ongoing {
+    padding: 120px 0;
+    background: var(--accent-blue);
+    color: #E8E1CE;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ongoing::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(168, 121, 52, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .ongoing-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+  }
+
+  .ongoing-header {
+    border-bottom: 1px solid rgba(232, 225, 206, 0.2);
+    padding-bottom: 32px;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .ongoing-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #FDFAF0;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+
+  .ongoing-title em {
+    font-style: italic;
+    color: var(--accent-gold);
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
+
+  .ongoing-desc {
+    max-width: 400px;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  .ongoing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .ongoing-card {
+    background: rgba(253, 250, 240, 0.04);
+    border: 1px solid rgba(232, 225, 206, 0.15);
+    padding: 32px 28px;
+    border-radius: 4px;
+    transition: all 0.3s var(--ease-out);
+  }
+
+  .ongoing-card:hover {
+    background: rgba(253, 250, 240, 0.08);
+    border-color: rgba(232, 225, 206, 0.3);
+  }
+
+  .ongoing-status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+  }
+
+  .ongoing-sou {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #E8E1CE;
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+
+  .ongoing-card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #FDFAF0;
+    margin-bottom: 14px;
+    font-variation-settings: "opsz" 36, "SOFT" 30;
+  }
+
+  .ongoing-card-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.85;
+  }
+
+  .ongoing-card .source-btn {
+    background: transparent;
+    color: #E8E1CE;
+    border-color: rgba(232, 225, 206, 0.3);
+  }
+
+  .ongoing-card .source-btn:hover {
+    background: var(--accent-gold);
+    color: var(--accent-blue-dark);
+    border-color: var(--accent-gold);
+  }
+
+  /* ============ SOURCES HUB ============ */
+  .hub {
+    padding: 100px 0;
+    background: var(--bg-paper);
+  }
+
+  .hub-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .hub-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+
+  .hub-lede {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+    max-width: 600px;
+  }
+
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .hub-card {
+    background: var(--bg-card);
+    border: 1px solid var(--divider);
+    padding: 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s var(--ease-out);
+    display: block;
+  }
+
+  .hub-card:hover {
+    border-color: var(--accent-red);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -8px rgba(139, 46, 46, 0.15);
+  }
+
+  .hub-card-src {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+    margin-bottom: 10px;
+  }
+
+  .hub-card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    font-variation-settings: "opsz" 36, "SOFT" 30;
+  }
+
+  .hub-card-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 60px 0 40px;
+    background: var(--text-primary);
+    color: #E8E1CE;
+    border-top: 1px solid var(--divider);
+  }
+
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-left {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-variation-settings: "opsz" 36, "SOFT" 50;
+  }
+
+  .footer-left em {
+    font-style: italic;
+    color: var(--accent-gold);
+  }
+
+  .footer-right {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: rgba(232, 225, 206, 0.6);
+    letter-spacing: 0.05em;
+  }
+
+  /* ============ REFORM TAGS (category) ============ */
+  .tag-strip {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: rgba(139, 46, 46, 0.1);
+    color: var(--accent-red);
+  }
+
+  .tag.forskola {
+    background: rgba(30, 58, 95, 0.1);
+    color: var(--accent-blue);
+  }
+
+  .tag.fritidshem {
+    background: rgba(168, 121, 52, 0.15);
+    color: var(--accent-gold);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .top-inner {
+      padding: 0 20px;
+      gap: 12px;
+    }
+
+    .year-nav {
+      gap: 2px;
+    }
+
+    .year-btn {
+      padding: 5px 10px;
+      font-size: 11px;
+    }
+
+    .brand {
+      font-size: 15px;
+    }
+
+    .hero { padding: 70px 0 60px; }
+    .hero-inner,
+    .intro-inner,
+    .section-header,
+    .reform-list,
+    .ongoing-inner,
+    .hub-inner,
+    .footer-inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .intro-inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .section-header {
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .reform {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 36px 0;
+    }
+
+    .reform-date {
+      position: static;
+    }
+
+    .date-big {
+      font-size: 28px;
+      display: inline-block;
+      margin-right: 12px;
+    }
+
+    .date-small {
+      display: inline-block;
+    }
+
+    .role-boxes {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-meta {
+      gap: 20px;
+    }
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow,
+  .hero-title,
+  .hero-lede,
+  .hero-meta {
+    animation: fadeUp 0.9s var(--ease-out) backwards;
+  }
+
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-title { animation-delay: 0.2s; }
+  .hero-lede { animation-delay: 0.4s; }
+  .hero-meta { animation-delay: 0.6s; }
+
+  .reform {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  }
+
+  .reform.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    header.top { position: static; }
+    .reform { break-inside: avoid; page-break-inside: avoid; }
+    .ongoing { color: #000; background: white; }
+    .ongoing-card { border: 1px solid #999; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ STICKY HEADER ============ -->
+<header class="top">
+  <div class="top-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark"></span>
+      <span>Skolreformer · 2026→2031</span>
+    </a>
+    <nav class="year-nav" aria-label="Tidslinje">
+      <a href="#y2026" class="year-btn">2026</a>
+      <a href="#y2027" class="year-btn">2027</a>
+      <a href="#y2028" class="year-btn">2028</a>
+      <a href="#ongoing" class="year-btn">Pågående</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Grundskola · Förskola · Fritidshem</div>
+    <h1 class="hero-title">De största <em>skolreformerna</em><br>på trettio år.</h1>
+    <p class="hero-lede">
+      En tidsordnad genomgång av lagändringar, propositioner och pågående utredningar som påverkar
+      grundskolan, förskolan och fritidshemmet — med explicit ansvarsfördelning för skolchef och rektor.
+    </p>
+    <div class="hero-meta">
+      <div>
+        <div class="meta-label">Propositioner</div>
+        <div class="meta-value">10 på bordet</div>
+      </div>
+      <div>
+        <div class="meta-label">Kritisk tidpunkt</div>
+        <div class="meta-value">Ht 2028</div>
+      </div>
+      <div>
+        <div class="meta-label">Utredningar</div>
+        <div class="meta-value">5+ pågående</div>
+      </div>
+      <div>
+        <div class="meta-label">Källor</div>
+        <div class="meta-value">Regeringen · Riksdagen · Skolverket</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="intro-label">Så läser du<br>översikten</div>
+    <div class="intro-text">
+      <p>Varje reform visas i <strong>tidsordning</strong> med exakt ikraftträdande, propositionsnummer och direktlänkar till källmaterialet.</p>
+      <p>Under varje reform finns två ansvarsboxar — <strong>skolchef/huvudman</strong> i djup blått och <strong>rektor</strong> i tegelrött — som konkretiserar vad som förväntas av respektive roll.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2026 ============ -->
+<section class="timeline-section" id="y2026">
+  <div class="section-header">
+    <div class="section-year">2026</div>
+    <div class="section-subtitle">
+      Första vågen. Trygghetsreformer och mobilförbud träder i kraft under sommaren och hösten. Förberedelserna för de större 2028-reformerna pågår parallellt.
+    </div>
+  </div>
+
+  <div class="reform-list">
+
+    <!-- 15 jan 2026 -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">15 jan</div>
+        <div class="date-small">2026 · i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Barnrätt</span></div>
+        <span class="reform-prop ikraft">Prop. 2025/26:12 · Beslutad</span>
+        <h3 class="reform-title">Stärkt skydd för barn som riskerar att fara illa</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Ändringar i föräldrabalken som förbättrar förutsättningarna för skolans samverkan med socialtjänsten</li>
+            <li>Förstärker möjligheterna att agera när barn utsätts för risk i hemmet eller av närstående</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Uppdatera samverkansrutiner</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Uppdatera rutiner för uppgiftsskyldighet vid vårdnadsutredningar</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>En ny paragraf, 6 kap. 20 c § föräldrabalken, inför en uppgiftsskyldighet för personal inom skolväsendet och annan pedagogisk verksamhet att lämna uppgifter till socialnämnden på begäran vid vårdnads-, boende- och umgängesutredningar. Huvudmannen behöver säkerställa att det finns tydliga rutiner för hur sådana begäranden hanteras och vem som ansvarar för att svara. <strong>Viktigt undantag:</strong> skolläkare, skolsköterskor, psykologer och kuratorer inom elevhälsan är undantagna från uppgiftsskyldigheten.</p><div class="role-item-source">6 kap. 20 c § föräldrabalken · prop. 2025/26:12</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Anpassa rutiner för orosanmälan till ny socialtjänstlag</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Skolan är anmälningsskyldig enligt 19 kap. 1 § socialtjänstlagen (2025:400) — hänvisningen i 29 kap. 13 § skollagen uppdateras till den nya socialtjänstlagen. Socialnämnden ska återkoppla till anmälaren senast en vecka efter beslut om att inleda eller inte inleda utredning. En ny sekretessbestämmelse i 40 kap. 7 g § OSL innebär att sekretess gäller hos anmälningsskyldiga för uppgifter som hänför sig till en anmälan om oro för ett barn eller återkopplingen från socialnämnden. Lokala rutiner bör anpassas så att dessa uppgifter hanteras enligt sekretessen.</p><div class="role-item-source">19 kap. 1 och 6 §§ socialtjänstlagen (2025:400) · 40 kap. 7 g § OSL · prop. 2025/26:12</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Informera personal</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Informera personal om den nya uppgiftsskyldigheten</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>All personal som arbetar med barn behöver veta att det nu finns <em>två separata</em> skyldigheter gentemot socialnämnden: dels den befintliga skyldigheten att anmäla oro (19 kap. 1 § socialtjänstlagen), dels den nya skyldigheten att på begäran lämna uppgifter vid vårdnads-, boende- och umgängesutredningar (6 kap. 20 c § föräldrabalken). Elevhälsopersonal (skolläkare, skolsköterska, psykolog, kurator) är undantagen från uppgiftsskyldigheten — rektor bör aktivt kommunicera detta för att undvika att elevhälsopersonal felaktigt lämnar uppgifter.</p><div class="role-item-source">6 kap. 20 c § föräldrabalken · 19 kap. 1 § socialtjänstlagen (2025:400) · prop. 2025/26:12</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Anpassa lokala rutiner till den nya sekretessen</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Den nya sekretessbestämmelsen i 40 kap. 7 g § OSL omfattar uppgifter som hänför sig till en orosanmälan och socialnämndens återkoppling. Meddelarfriheten inskränks också för dessa uppgifter. Rektor bör se över hur anmälnings- och återkopplingshandlingar hanteras i skolan — var de förvaras, vem som har tillgång, och hur de diarieförs — så att sekretessen respekteras.</p><div class="role-item-source">40 kap. 7 g och 8 §§ OSL · prop. 2025/26:12</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/starkt-skydd-for-barn-som-riskerar-att-fara-illa_hd0312/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:12 <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 30 jun 2026 -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">30 jun</div>
+        <div class="date-small">2026 · i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Brottsförebyggande</span></div>
+        <span class="reform-prop">Prop. 2025/26:192</span>
+        <h3 class="reform-title">Överlämnande av uppgifter mellan skolor i brottsförebyggande syfte</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Skyldighet att lämna uppgifter till mottagande skolenhet vid skolbyte om <strong>konkret risk finns</strong> för att eleven kommer begå eller utsättas för brott</li>
+            <li>Tillämpas på utbildning som bedrivs <strong>efter 1 januari 2027</strong></li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Etablera rutiner</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Bygg rutiner för uppgiftsöverlämning vid skolbyte</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Propositionen inför en <strong>skyldighet</strong> för avlämnande skolenhet att lämna uppgifter som rör eleven till mottagande skolenhet när en elev byter skolform eller byter skolenhet inom en skolform, om det på grund av konkreta omständigheter finns risk för att eleven kommer att begå eller utsättas för brott. Huvudmannen behöver bygga processer både för interna byten inom huvudmannen och för byten mellan huvudmän (kommunal ↔ fristående). Lagändringar träder i kraft 30 juni 2026 och tillämpas på utbildning efter 1 januari 2027.</p><div class="role-item-source">Skollagsändring · prop. 2025/26:192</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Verkställ och dokumentera</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Bedöm när "konkreta omständigheter" utgör risk</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Skyldigheten utlöses när det på grund av <strong>konkreta omständigheter</strong> finns risk för att eleven kommer att begå eller utsättas för brott. Det räcker alltså inte med allmän oro — det ska finnas identifierbara faktorer. Rektor behöver utveckla bedömningsgrunder och beslutsunderlag tillsammans med elevhälsa och trygghetsteam, och dokumentera vad som lämnats över och varför.</p><div class="role-item-source">Skollagsändring · prop. 2025/26:192</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/overlamnande-av-uppgifter-mellan-skolor-i_hd03192/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:192 <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 1 jul 2026 -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">1 jul</div>
+        <div class="date-small">2026 · i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag forskola">Förskola</span><span class="tag">Grundskola</span></div>
+        <span class="reform-prop ikraft">Skollagsändring · Beslutad</span>
+        <h3 class="reform-title">Överlämning av uppgifter från förskola till skola</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Nytt första stycke i <strong>3 kap. 12 j § skollagen</strong></li>
+            <li>Förskolan ska överlämna uppgifter till mottagande skolenhet för att underlätta barnets skolgång</li>
+            <li>Gäller övergång till grundskola, anpassade grundskolan, specialskolan och sameskolan</li>
+            <li>Tillämpas på verksamhet som bedrivs <strong>efter 31 december 2027</strong></li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Samordna förskola och grundskola</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Bygg gemensamma rutiner förskola ↔ grundskola</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Nya bestämmelser i 3 kap. 12 j § skollagen innebär att förskolan ska överlämna uppgifter till mottagande skolenhet för att underlätta barnets övergång till grundskolan, anpassade grundskolan, specialskolan eller sameskolan. Huvudmannen behöver etablera en process där förskolechefer och grundskolerektorer är överens om vilka uppgifter som överlämnas och när.</p><div class="role-item-source">3 kap. 12 j § skollagen · Skolverket · Aktuella regeländringar</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Operativt ansvar</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Förskolechef respektive grundskolerektor — olika roller</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Förskolechefen ansvarar för att uppgifter lämnas över; grundskolerektorn ansvarar för att ta emot och använda dem i planering inför skolstart. Vårdnadshavare bör informeras om den nya rutinen i god tid inför övergången, eftersom överlämningen är en ny lagreglerad skyldighet.</p><div class="role-item-source">3 kap. 12 j § skollagen · Skolverket · Aktuella regeländringar</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.skolverket.se/styrning-och-ansvar/forandringar-inom-skolomradet/aktuella-regelandringar" class="source-btn primary" target="_blank" rel="noopener">
+            Skolverket · Aktuella regeländringar <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 15 jul 2026 -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">15 jul</div>
+        <div class="date-small">2026 · i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag forskola">Förskola</span><span class="tag">Grundskola</span><span class="tag fritidshem">Fritidshem</span></div>
+        <span class="reform-prop">Prop. 2025/26:174</span>
+        <h3 class="reform-title">Utökade registerkontroller i skolväsendet</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Registerkontrollen omfattar även <strong>misstankeregistret</strong>, inte bara belastningsregistret</li>
+            <li>Registerutdraget får vara <strong>högst 6 månader gammalt</strong> (tidigare 12)</li>
+            <li>Tidsgränsen för förnyad anställning utan nytt utdrag sänks från 12 till 6 månader</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Uppdatera HR-processer</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Uppdatera rekryterings- och HR-rutiner</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Registerkontrollen utökas på flera sätt: den ska även omfatta uppgifter ur <strong>misstankeregistret</strong> (inte bara belastningsregistret), registerutdraget får vara högst 6 månader gammalt (mot tidigare 12), och tidsgränsen för förnyad anställning utan nytt utdrag sänks från 12 till 6 månader. Registerkontroll ska även göras för personal inom kommunal vuxenutbildning. HR-processer och rekryteringsmallar måste uppdateras inför ikraftträdandet 15 juli 2026.</p><div class="role-item-source">2 kap. 31 § skollagen · prop. 2025/26:174</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Kontrollera vid varje anställning</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Kontrollera utdrag vid varje anställning</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Vid nyanställning av personal i förskola, skola eller fritidshem ska ett registerutdrag visas upp — och det får efter 15 juli 2026 inte vara äldre än sex månader. Om ett registerutdrag inte visas upp, får verksamheten inte bedrivas. Rektor ansvarar för att kontrollen utförs och dokumenteras. Kontrollen ska avse både belastningsregistret och misstankeregistret.</p><div class="role-item-source">2 kap. 31 och 33 §§ skollagen · prop. 2025/26:174</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/utokade-registerkontroller-i-skolvasendet_hd03174/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:174 <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 1 aug 2026 -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">1 aug</div>
+        <div class="date-small">2026 · i kraft ht</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Grundskola</span><span class="tag fritidshem">Fritidshem</span><span class="tag">Trygghet</span></div>
+        <span class="reform-prop">Prop. 2025/26:193</span>
+        <h3 class="reform-title">Bättre förutsättningar för trygghet och studiero</h3>
+        <div class="reform-summary">
+          <ul>
+            <li><strong>Mobilförbud hela skoldagen</strong> i grundskolan, fritidshemmet och öppen fritidsverksamhet — mobiler samlas in vid skoldagens början</li>
+            <li>Dagens <em>ordningsregler</em> blir <em>skolregler</em>, skolgemensamma, med konsekvensplan</li>
+            <li>Förväntansdokument till elever och vårdnadshavare</li>
+            <li>Utökade disciplinära åtgärder: utvisning, omplacering, tillfällig placering utanför enheten, avstängning, tillträdesförbud</li>
+            <li>Utvisning och kvarsittning behöver inte dokumenteras skriftligt</li>
+            <li>Akutskola får drivas på entreprenad</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Säkerställ att arbetet bedrivs</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Säkerställ både förebyggande och upprätthållande arbete</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>5 kap. 3 § skollagen förtydligas: det ska på skolenheten bedrivas både ett <strong>förebyggande arbete</strong> som syftar till att skapa trygghet och studiero och ett <strong>arbete för att upprätthålla</strong> dem. Huvudmannen ska <em>säkerställa</em> att arbetet bedrivs, medan rektorn <em>ansvarar</em> för arbetet. Huvudmannen behöver se till att rektorn har de resurser och förutsättningar som krävs.</p><div class="role-item-source">5 kap. 3 § skollagen · prop. 2025/26:193</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Organisera resurser för mobilinsamling</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Mobilförbud i hela skoldagen blir obligatoriskt i grundskolan, anpassade grundskolan, specialskolan, sameskolan, fritidshemmet och öppen fritidsverksamhet. Mobiltelefoner ska samlas in vid elevens skoldags början och återlämnas senast vid skoldagens slut (5 kap. 4 § skollagen). Huvudmannen behöver budgetera för förvaring (skåp, påsar, system) och säkerställa rutiner för samtliga enheter, även fritidshem som inte är integrerade med en skolenhet.</p><div class="role-item-source">5 kap. 4 § skollagen · prop. 2025/26:193</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Förbered organisatorisk kapacitet för akutskola</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>23 kap. 12 c § skollagen (ny) gör det möjligt att lämna över akutskola på entreprenad till en annan huvudman inom skolväsendet, om akutskolan ingår i eller är knuten till en skolenhet och är inriktad mot tillfälligt placerade elever. Huvudmän utan egen kapacitet att driva akutskola bör utreda möjligheten att samverka med andra huvudmän.</p><div class="role-item-source">23 kap. 12 c § skollagen · prop. 2025/26:193</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Operativt ansvar för genomförandet</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Ta fram skolregler med konsekvensplan</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Dagens ordningsregler ersätts med <strong>skolregler</strong> (5 kap. 5 § skollagen). Rektor ansvarar för att ta fram skolreglerna och beslutar om dem (5 kap. 5 a §). Reglerna ska vara skolgemensamma förhållningsregler som syftar till att upprätthålla trygghet och studiero, och ska innehålla en <strong>plan för konsekvenser</strong> vid överträdelser. Skolreglerna ska förankras hos eleverna och följas upp regelbundet.</p><div class="role-item-source">5 kap. 5 och 5 a §§ skollagen · prop. 2025/26:193</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Ta fram förväntansdokument för varje skolenhet</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Ett förväntansdokument ska finnas för varje skolenhet (5 kap. 5 b § skollagen). Det ska innehålla information om skolreglerna, om skolans gemensamma rutiner och förhållningssätt för att upprätthålla dem, samt en påminnelse om vårdnadshavares ansvar enligt 6 kap. föräldrabalken. Rektor ansvarar för att dokumentet tas fram, och elever och vårdnadshavare ska informeras om innehållet varje läsår.</p><div class="role-item-source">5 kap. 5 b § skollagen · prop. 2025/26:193</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Bygg rutiner för mobilinsamling — även fritidshem</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Rektor beslutar om skriftliga rutiner för mobilinsamlingen (5 kap. 4 d § skollagen). Rutinerna ska täcka hur insamling och återlämning går till, hur utrustningen förvaras och hur återlämning säkerställs. För fritidshem som inte är integrerade med en skolenhet och för öppen fritidsverksamhet beslutas rutinerna av personal som huvudmannen utser. Undantag får göras av rektor/lärare vid särskilda skäl eller vid utbildning utanför skolenheten.</p><div class="role-item-source">5 kap. 4 och 4 d §§ skollagen · prop. 2025/26:193</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Hantera utökade möjligheter till utvisning och omplacering</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Lärare får utökade möjligheter att visa ut elever ur undervisningslokalen (5 kap. 7 §): vid våld, hot eller kränkning får eleven visas ut utan föregående uppmaning. Dessutom behöver utvisning och kvarsittning inte längre dokumenteras skriftligt (5 kap. 24 §). Rektor får besluta om tillfällig omplacering inom skolenheten upp till återstoden av terminen (5 kap. 12 §) och tillfällig placering utanför skolenheten upp till 8 veckor vid särskilda skäl (5 kap. 13 §).</p><div class="role-item-source">5 kap. 7, 12, 13 och 24 §§ skollagen · prop. 2025/26:193</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Förstå den nya åtgärden nekat tillträde till skolenheten</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>En ny åtgärd införs i 5 kap. 13 c § skollagen: rektor får i grundskolans åk 8–10, specialskolans åk 8–11 och gymnasieskolan besluta att neka en elev tillträde till skolenheten om åtgärder enligt 13 § inte räcker och det finns <strong>synnerliga skäl</strong> med hänsyn till andra elevers eller personals säkerhet. Rektor får <em>inte</em> delegera beslutet. Om eleven är under 18 år ska samråd ske med socialnämnden innan beslut. Beslutet kan överklagas till allmän förvaltningsdomstol. Eleven ska få fjärr- eller distansundervisning. Övergångsregel: bestämmelsen tillämpas t.o.m. 30 juni 2028 även för elever i årskurs 7.</p><div class="role-item-source">5 kap. 13 c–13 h §§ skollagen · 28 kap. 9 § skollagen · prop. 2025/26:193</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Längre avstängningstider och förenklad kompensation</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Avstängningstiden utökas: en elev får inte stängas av för längre tid än <strong>två veckor</strong> (tidigare en vecka) och inte fler gånger än tre per kalenderhalvår (tidigare två) (5 kap. 15 §). Eleven ska erbjudas <em>kompensationsundervisning</em> — rektor avgör tidpunkt och form. Rektor får inte delegera beslut om avstängning.</p><div class="role-item-source">5 kap. 14 och 15 §§ skollagen · prop. 2025/26:193</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/battre-forutsattningar-for-trygghet-och-studiero-i_hd03193/html/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:193 <span class="arrow">↗</span>
+          </a>
+          <a href="https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2025/01/sou-20258/" class="source-btn" target="_blank" rel="noopener">
+            SOU 2025:8 · Bakgrund <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 2027 ============ -->
+<section class="timeline-section" id="y2027">
+  <div class="section-header">
+    <div class="section-year">2027</div>
+    <div class="section-subtitle">
+      Transparens och kartläggning. Offentlighetsprincipen för friskolor och nytt stöd för språkval träder i kraft. Förberedelserna inför 2028 trappas upp.
+    </div>
+  </div>
+
+  <div class="reform-list">
+
+    <!-- 1 jan 2027 -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">1 jan</div>
+        <div class="date-small">2027 · i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag forskola">Förskola</span><span class="tag">Grundskola</span><span class="tag fritidshem">Fritidshem</span></div>
+        <span class="reform-prop">Prop. 2025/26:191</span>
+        <h3 class="reform-title">Offentlighetsprincipen för fristående skolor och förskolor</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Rätten att ta del av allmänna handlingar ska gälla hos <strong>fristående förskolor, skolor och fritidshem</strong></li>
+            <li>Lättnadsregler för mindre huvudmän: sammanlagt max 450 elever (skola/förskola/fritidshem) eller max 100 barn (enbart förskola)</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman (kommunal)</div>
+            <div class="role-title">Förbered samverkan</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Kommunala huvudmän påverkas indirekt</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Propositionen utökar offentlighetsprincipen till att gälla hos juridiska personer som är enskilda huvudmän inom skolväsendet — dvs. fristående förskolor, skolor och fritidshem. Kommunala huvudmän påverkas inte direkt av lagändringen, men behöver se över hur uppgiftslämning mellan offentliga och fristående aktörer organiseras, särskilt när det gäller samverkan med friskolor i kommunen.</p><div class="role-item-source">2 kap. 3 a § OSL · 29 kap. skollagen · prop. 2025/26:191</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Förståelse för nya spelregler</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Friskolerektor: bygg hantering av allmänna handlingar</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Enskilda huvudmän jämställs med myndigheter vid tillämpningen av offentlighets- och sekretesslagen. Friskolor behöver bygga en fungerande hantering av allmänna handlingar — diarieföring, arkivering, utlämningsrutiner och sekretessbedömningar. <strong>Lättnadsregler för mindre huvudmän:</strong> sammanlagt högst 450 elever (skola/förskola/fritidshem) eller högst 100 barn (enbart förskola). Ikraftträdande 1 januari 2027.</p><div class="role-item-source">2 kap. 3 a § OSL · 29 kap. 1, 15, 16 och 18 §§ skollagen · prop. 2025/26:191</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/offentlighetsprincipen-med-lattnadsregler-for_hd03191/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:191 <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 1 jul 2027 -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">1 jul</div>
+        <div class="date-small">2027 · tillämpas</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Grundskola</span><span class="tag">Språkval</span></div>
+        <span class="reform-prop">Regeringsuppdrag</span>
+        <h3 class="reform-title">Nationellt kartläggningsmaterial för svenska / SvA</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Skolverket tar fram nationellt material som ska ligga till grund för rektors beslut om elev ska läsa svenska eller svenska som andraspråk</li>
+            <li>Ska användas från <strong>juli 2027</strong></li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Kompetensförsörjning</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Planera kompetensförsörjning för SvA</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Skolverket har fått i uppdrag att ta fram ett nationellt kartläggningsmaterial som ska ligga till grund för rektors beslut om en elev ska läsa svenska eller svenska som andraspråk. Huvudmannen behöver säkerställa att rektorer har utbildning och stöd att använda materialet, och planera för eventuell omfördelning av SvA-resurser som följd.</p><div class="role-item-source">Regeringsuppdrag · Utbildningsdepartementets budgetsatsningar 2026</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Fatta välunderbyggda beslut</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Använd kartläggningsmaterialet som beslutsunderlag</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Rektor fattar beslut om en elev ska läsa svenska eller svenska som andraspråk. Från 1 juli 2027 ska Skolverkets kartläggningsmaterial användas som underlag. Beslutet bör dokumenteras och lärare ska ha förutsättningar att genomföra kartläggningen.</p><div class="role-item-source">Regeringsuppdrag · Utbildningsdepartementets budgetsatsningar 2026</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.regeringen.se/regeringens-politik/utbildningsdepartementets-samlade-budgetsatsningar/utbildningsdepartementets-samlade-budgetsatsningar-2026/" class="source-btn primary" target="_blank" rel="noopener">
+            Budgetsatsningar 2026 <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 2028 ============ -->
+<section class="timeline-section" id="y2028">
+  <div class="section-header">
+    <div class="section-year">2028</div>
+    <div class="section-subtitle">
+      Den stora konvergensen. Fem reformer träder i kraft samtidigt höstterminen 2028. Detta är den verkliga stresspunkten för implementeringen.
+    </div>
+  </div>
+
+  <div class="reform-list">
+
+    <!-- Tioårig grundskola -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">Ht 28</div>
+        <div class="date-small">träder i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Grundskola</span><span class="tag forskola">Förskoleklass</span></div>
+        <span class="reform-prop beslutad">Prop. 2024/25:143 · Beslutad</span>
+        <h3 class="reform-title">Tioårig grundskola — förskoleklassen blir åk 1</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Förskoleklassen ersätts med en ny <strong>årskurs 1</strong> — grundskolan blir tioårig</li>
+            <li>Anpassade grundskolan blir tioårig, specialskolan elvaårig, sameskolan sjuårig</li>
+            <li>Lågstadiet utvidgas ett år; garanterad undervisningstid <strong>+534 timmar</strong> per skolform</li>
+            <li>Barn börjar åk 1 det år de fyller sex år</li>
+            <li>Elev som gått förskoleklass 2027/28 börjar direkt i åk 2</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Strukturell omställning</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Strukturell omställning — lokaler och bemanning</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Förskoleklassen upphör som skolform och ersätts med en ny årskurs 1 i grundskolan. Även den anpassade grundskolan, specialskolan och sameskolan utökas med en ny första årskurs. <strong>Lågstadiet utvidgas ett år</strong> och den garanterade undervisningstiden utökas med <strong>534 timmar</strong> per skolform. Huvudmannen behöver dimensionera lokaler, personal och elevhälsa för utvidgat lågstadium och planera för kompetensförsörjning av behöriga lärare för yngre åldrar.</p><div class="role-item-source">Prop. 2024/25:143 · Skolverket · Tioårig grundskola</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Budgetera för nya läromedel och timmar</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>De 534 extra timmarna per skolform ska fördelas på ämnen och ämnesområden. Nya läromedel behöver upphandlas inför ht 2028. Skolverket tar fram förslag på hur timmarna fördelas. Huvudmannen behöver budgetera för både läromedel och för de utökade personalbehoven.</p><div class="role-item-source">Prop. 2024/25:143 · Skolverket · Tioårig grundskola</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Leda omställningen lokalt</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Anpassa tjänstefördelning och schema</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Grundskolan blir tioårig, anpassade grundskolan tioårig, specialskolan elvaårig, sameskolan sjuårig. Barn börjar åk 1 det år de fyller sex år. Elev som gått förskoleklass 2027/28 börjar direkt i åk 2. Rektor behöver anpassa tjänstefördelning och schema, kompetensutveckla personal inför nya åk 1, och samverka med förskolan om övergångar.</p><div class="role-item-source">Prop. 2024/25:143 · Skolverket · Tioårig grundskola</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Fördela de 534 extra timmarna på ämnen</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Timplanen utökas med 534 timmar per skolform när lågstadiet blir fyraårigt. Rektor ansvarar för att fördela dessa timmar på ämnen och ämnesområden enligt Skolverkets föreskrifter. Skolverket remitterar förslag till nya läroplaner 9 oktober – 11 december 2026 och överlämnar förslag till regeringen senast 31 mars 2027.</p><div class="role-item-source">Prop. 2024/25:143 · Skolverket · Tioårig grundskola</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/en-tioarig-grundskola_hc03143/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2024/25:143 <span class="arrow">↗</span>
+          </a>
+          <a href="https://www.skolverket.se/styrning-och-ansvar/forandringar-inom-skolomradet/tioarig-grundskola-och-nya-laroplaner" class="source-btn" target="_blank" rel="noopener">
+            Skolverket · Tioårig grundskola <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Nya läroplaner -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">Ht 28</div>
+        <div class="date-small">tillämpas</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Grundskola</span><span class="tag">Läroplan</span></div>
+        <span class="reform-prop">Prop. 2025/26:194</span>
+        <h3 class="reform-title">Nya läroplaner — för en stark kunskapsskola</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Kunskapsuppdraget lyfts fram i skollagen — utbildningen ska <em>förmedla och förankra kunskaper och värden</em></li>
+            <li>Läraren ska <strong>leda</strong> undervisningen, inte vara "coach" eller "handledare"</li>
+            <li>Nya kursplaner: konkretare, tydligare innehåll per stadium, enhetliga betygskriterier</li>
+            <li>Vårdnadshavares inflytande begränsas</li>
+            <li>Omfattar grundskolan, anpassade grundskolan, specialskolan och sameskolan</li>
+            <li><strong>Skolverkets tidslinje:</strong> remiss av kursplaneförslag 9 okt – 11 dec 2026, överlämning till regeringen senast 31 mars 2027</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Möjliggör implementeringen</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Möjliggör implementeringen organisatoriskt</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Utbildningens syftesparagraf (1 kap. 4 § skollagen) ändras så att utbildningen har till syfte att <em>förmedla och förankra</em> kunskaper och värden hos barn och elever. Definitionen av undervisning ändras för att betona lärarens ledande roll. Huvudmannen behöver budgetera för nya läromedel och lärarhandledningar, och skapa kompetensutvecklingsprogram för samtliga lärare inför ikraftträdandet 1 juli 2028.</p><div class="role-item-source">1 kap. 3 och 4 §§ skollagen · prop. 2025/26:194 · SOU 2025:19</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Pedagogiskt ledarskap i skarpt läge</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Led implementeringen av nya läro- och kursplaner</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>De obligatoriska skolformerna får samlade läroplaner med värdegrund, uppdrag, mål och riktlinjer, kursplaner, timplaner samt betygs- och bedömningskriterier. Rektor leder implementeringen på skolan: utbildar personal i nya skrivningar, säkerställer att undervisningen leds av läraren och inte av läromedlet, och följer upp kvaliteten. Skolverkets tidslinje: remiss av kursplaneförslag 9 okt – 11 dec 2026, överlämning till regeringen senast 31 mars 2027.</p><div class="role-item-source">1 kap. 4 § skollagen · prop. 2025/26:194 · Skolverket</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/nya-laroplaner-for-en-stark-kunskapsskola_hd03194/html/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:194 <span class="arrow">↗</span>
+          </a>
+          <a href="https://www.skolverket.se/styrning-och-ansvar/forandringar-inom-skolomradet/tioarig-grundskola-och-nya-laroplaner/sa-har-arbetar-skolverket-med-nya-laroplaner-och-tioarig-grundskola" class="source-btn" target="_blank" rel="noopener">
+            Skolverket · Arbetsprocess <span class="arrow">↗</span>
+          </a>
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/statens-offentliga-utredningar/kunskap-for-alla_hdb319/html/" class="source-btn" target="_blank" rel="noopener">
+            SOU 2025:19 · Kunskap för alla <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Förbättrat stöd -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">1 jul</div>
+        <div class="date-small">2028 · i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Grundskola</span><span class="tag">Elevstöd</span></div>
+        <span class="reform-prop">Prop. 2025/26:195</span>
+        <h3 class="reform-title">Förbättrat stöd i skolan — nytt stödsystem</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Garantin för tidiga stödinsatser och <strong>extra anpassningar avskaffas</strong></li>
+            <li><strong>Obligatoriska standardiserade tester</strong> i början av höstterminen i vissa årskurser identifierar stödbehov</li>
+            <li><strong>Stödundervisning</strong> införs som ny stödform i svenska, SvA och matematik</li>
+            <li>Beslut om särskilt stöd i mindre grupp eller enskilt underlättas</li>
+            <li>Anpassad studiegång får endast ges <strong>i sista hand</strong></li>
+            <li>Nationella prov i årskurs 3 avskaffas</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Ny stödlogik kräver omorganisation</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Bygg om stödstrukturen</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Garantin för tidiga stödinsatser och reglerna om <em>extra anpassningar</em> avskaffas. I stället införs <strong>stödundervisning</strong> som ny stödform i svenska, svenska som andraspråk och matematik i de obligatoriska skolformerna, gymnasieskolan och anpassade gymnasieskolan. Huvudmannen behöver planera om resursfördelningen för stöd och se till att organisationen bär den nya strukturen. Beslut om särskilt stöd i mindre grupp eller enskilt underlättas; anpassad studiegång får endast ges <em>i sista hand</em>.</p><div class="role-item-source">3 kap. skollagen · prop. 2025/26:195 · SOU 2025:44</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Organisera standardiserade tester</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Standardiserade tester ska genomföras i början av höstterminen i vissa årskurser för att identifiera elever med stödbehov. Nationella prov i årskurs 3 avskaffas. Huvudmannen behöver säkerställa organisation, kompetens och IT-stöd för att genomföra testerna. Skolverket tar fram testerna.</p><div class="role-item-source">3 kap. skollagen · prop. 2025/26:195</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Skyndsam stödundervisning</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Säkerställ skyndsam stödundervisning</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Om ansvarig lärare eller mentor befarar att en elev inte kommer att tillgodogöra sig kunskaperna — genom undervisning, standardiserat test, nationellt prov eller andra skäl — ska eleven ges stödundervisning. Rektor ansvarar för att stödundervisning sätts in <strong>skyndsamt</strong>. Vid behov ska samråd ske med speciallärare eller specialpedagog. Stödundervisningen ska utvärderas senast inom en månad för att avgöra om eleven behöver fortsatt stöd eller om en utredning av särskilt stöd ska göras. En elev bör inte ges stödundervisning längre än två månader per termin.</p><div class="role-item-source">3 kap. 5 a § skollagen · prop. 2025/26:195</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Fatta beslut om särskilt stöd</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Bestämmelserna om särskilt stöd ändras. Ansvarig lärare eller mentor ska anmäla till rektor om en elevs behov av särskilt stöd behöver utredas, och sådant behov ska utredas tidigare än idag. Beslut om särskilt stöd i mindre undervisningsgrupp eller som enskild undervisning ska underlättas. Beslut om anpassad studiegång får bara fattas om alla andra möjligheter till särskilt stöd är uttömda eller bedöms olämpliga.</p><div class="role-item-source">3 kap. skollagen · prop. 2025/26:195</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/forbattrat-stod-i-skolan_hd03195/html/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:195 <span class="arrow">↗</span>
+          </a>
+          <a href="https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2025/04/sou-202544/" class="source-btn" target="_blank" rel="noopener">
+            SOU 2025:44 · Bakgrund <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Tid för undervisningsuppdraget -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">1 jul</div>
+        <div class="date-small">2028 · i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Grundskola</span><span class="tag forskola">Förskola</span><span class="tag">Lärare</span></div>
+        <span class="reform-prop">Prop. 2025/26:196</span>
+        <h3 class="reform-title">Tid för undervisningsuppdraget</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Reglerad tid för undervisning, planering och uppföljning — <strong>tak</strong> för undervisningstimmar, <strong>golv</strong> för planeringstid</li>
+            <li>Minskad administration: färre utvecklingssamtal, smalare skriftliga planer, minskade anmälningskrav vid kränkande behandling</li>
+            <li>Utvecklingssamtal: personalen avgör när information ges, inte vårdnadshavarna</li>
+            <li>Skriftliga planer fokuserar på <em>kunskapsutveckling</em> — inte social utveckling</li>
+            <li>Omfattar även förskollärare</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Ny tjänstefördelning</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Förbered ny tjänstefördelning</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Propositionen reglerar tid för undervisningsuppdraget — utöver undervisningen innefattar det planering och uppföljning. Det ska sättas en högsta gräns för antalet undervisningstimmar. Huvudmannen behöver se över hur arbetstid fördelas och föra dialog med fackliga parter inför ikraftträdandet. Skolverket ska föra in motsvarande reglering om rektors ansvar för lärarnas förutsättningar i läroplanerna.</p><div class="role-item-source">Skollagsändringar · prop. 2025/26:196 · SOU 2025:26</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Schema, struktur, samtal</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Skapa förutsättningar för lärares planering</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Rektor får ett förtydligat ansvar att skapa förutsättningar för förskollärare och lärare att planera, genomföra och följa upp sin undervisning (regleras i läroplanerna). Detta inkluderar att lägga scheman inom reglerad tid och att omorganisera utvecklingssamtal och skriftliga planer. Skriftliga planer smalnas av till att fokusera på kunskapsuppdraget, inte elevernas utveckling som helhet. Arbetet mot kränkande behandling fortsätter att dokumenteras.</p><div class="role-item-source">Skollagsändringar · prop. 2025/26:196 · SOU 2025:26</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/tid-for-undervisningsuppdraget_hd03196/html/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:196 <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Nytt betygssystem -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">1 jul</div>
+        <div class="date-small">2028 · i kraft</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Grundskola</span><span class="tag">Betyg</span></div>
+        <span class="reform-prop">Prop. 2025/26:197</span>
+        <h3 class="reform-title">Ett likvärdigt betygssystem</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Ny betygsskala <strong>1–10</strong> utan skarp godkäntgräns ersätter A–F (4–5 = godtagbart, 1–3 = begränsat)</li>
+            <li><strong>Nationella slutprov</strong> i grundskolan, rättas centralt</li>
+            <li>Lärarsatta betyg <strong>kalibreras</strong> mot slutproven → motverka betygsinflation</li>
+            <li>Meritvärde ≥ 4 krävs för behörighet till nationellt gymnasieprogram</li>
+            <li><strong>Bedömningssamråd</strong> vid slutlig betygssättning</li>
+            <li>Huvudmän ska rapportera in betyg till myndighet</li>
+            <li>Första kullen med nya meritvärden går ut gymnasiet 2031</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Infrastruktur och inrapportering</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Bygg infrastruktur för betygsinrapportering</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>En betygsskala med tio betygssteg 1–10 införs i de obligatoriska skolformerna och de frivilliga skolformerna på gymnasial nivå, utan skarp gräns för godkänt. Huvudmän ska rapportera in uppgifter om betyg till myndighet; föreskrifter om vilka uppgifter och när bestäms senare. Huvudmannen behöver bygga rutin för betygsinrapportering och IT-stöd för nationella slutprov och bedömningssamråd.</p><div class="role-item-source">Skollagsändringar · prop. 2025/26:197 · SOU 2025:18</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Kompetensutveckla betygssättande lärare</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>En ny modell införs där meritvärdet beräknas utifrån två underlag: betyg och resultat från nationella slutprov. Meritvärde lägst 4 krävs för behörighet till nationellt gymnasieprogram. Vid slutlig betygssättning ska lärare ha <strong>bedömningssamråd</strong>. Huvudmannen behöver säkerställa att alla betygssättande lärare får kompetensutveckling i det nya systemet.</p><div class="role-item-source">Skollagsändringar · prop. 2025/26:197</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Förankra ny betygsmodell</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Förankra nya betygsmodellen</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Rektor behöver förklara den nya modellen för elever och vårdnadshavare: betygen 4–5 motsvarar godtagbara kunskaper, 1–3 begränsade. Lärarsatta betyg kalibreras mot nationella slutprov för att motverka betygsinflation. Första kullen med nya meritvärden går ut gymnasiet 2031.</p><div class="role-item-source">Skollagsändringar · prop. 2025/26:197 · SOU 2025:18</div></div></div></li><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Organisera bedömningssamråd och slutprov</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Rektor ansvarar för att bedömningssamråd genomförs vid slutlig betygssättning och att nationella slutprov organiseras enligt Skolverkets anvisningar. Rektor stöttar även lärare i kalibreringen mot de centralt rättade slutproven.</p><div class="role-item-source">Skollagsändringar · prop. 2025/26:197</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/ett-likvardigt-betygssystem_hd03197/html/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:197 <span class="arrow">↗</span>
+          </a>
+          <a href="https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2025/02/sou-202518/" class="source-btn" target="_blank" rel="noopener">
+            SOU 2025:18 · Bakgrund <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Legitimation -->
+    <article class="reform">
+      <div class="reform-date">
+        <div class="date-big">Ht 28</div>
+        <div class="date-small">tillämpas</div>
+      </div>
+      <div class="reform-body">
+        <div class="tag-strip"><span class="tag">Grundskola</span><span class="tag">Lärare</span></div>
+        <span class="reform-prop">Prop. 2025/26:149</span>
+        <h3 class="reform-title">Legitimation och behörighet i den tioåriga grundskolan</h3>
+        <div class="reform-summary">
+          <ul>
+            <li>Upplysningsbestämmelse i skollagen om att regeringen kan meddela föreskrifter om undantag från behörighets- och legitimationskrav</li>
+            <li>Anpassar behörighetsreglerna inför införandet av åk 1 i den tioåriga grundskolan</li>
+            <li>Skolverket väntar på regeringsbeslut innan detaljer om behörighet och legitimation kan kommuniceras</li>
+          </ul>
+        </div>
+        <div class="role-boxes">
+          <div class="role-box chef">
+            <div class="role-label">Skolchef / Huvudman</div>
+            <div class="role-title">Planera kompetensförsörjning</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Följ Skolverkets kommunikation om övergångsregler</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>En upplysningsbestämmelse införs i 2 kap. 16 § skollagen som gör det möjligt för regeringen att meddela föreskrifter om att en lärares eller förskollärares behörighet att undervisa kan ändras eller utökas <em>utan ansökan</em> till Skolverket när ändringarna är en nödvändig följd av ändringar i skollagen. Syftet är att övergången till tioåriga grundskolan (ht 2028) ska bli så enkel som möjligt för lärare och förskollärare. Detaljerna beslutas via förordning efter att regeringen meddelar föreskrifter.</p><div class="role-item-source">2 kap. 16 § skollagen · prop. 2025/26:149</div></div></div></li></ul>
+          </div>
+          <div class="role-box rektor">
+            <div class="role-label">Rektor</div>
+            <div class="role-title">Bemanna åk 1 rätt</div>
+            <ul class="role-list"><li class="role-item"><button class="role-item-toggle" aria-expanded="false" type="button"><span class="role-item-label">Bemanna nya åk 1 med rätt behörighet</span><span class="role-item-arrow">›</span></button><div class="role-item-body"><div class="role-item-body-inner"><p>Rektor behöver inventera befintliga legitimationer och bemanningen inför ht 2028. Upplysningsbestämmelsen möjliggör att behörighet kan ändras eller utökas utan ny ansökan om ändringen är en följd av de nya skollagsreglerna. Övergångsperioder kan gälla tillfälligt utan att det anges på legitimationen. Lagändringen träder i kraft 1 augusti 2026.</p><div class="role-item-source">2 kap. 16 § skollagen · prop. 2025/26:149</div></div></div></li></ul>
+          </div>
+        </div>
+        <div class="source-row">
+          <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/legitimation-och-behorighet-i-den-tioariga_hd03149/html/" class="source-btn primary" target="_blank" rel="noopener">
+            Prop. 2025/26:149 <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ ONGOING INVESTIGATIONS ============ -->
+<section class="ongoing" id="ongoing">
+  <div class="ongoing-inner">
+    <div class="ongoing-header">
+      <h2 class="ongoing-title">På <em>remiss</em><br>och på väg.</h2>
+      <div class="ongoing-desc">Pågående utredningar som ännu inte omsatts i propositioner, men som kommer påverka grundskola, förskola och fritidshem inom de kommande åren. Bevaka dessa aktivt.</div>
+    </div>
+
+    <div class="ongoing-grid">
+
+      <div class="ongoing-card">
+        <div class="ongoing-status">På remiss · 19 mars 2026</div>
+        <div class="ongoing-sou">SOU 2025:113</div>
+        <h3 class="ongoing-card-title">En förbättrad elevhälsa</h3>
+        <p class="ongoing-card-desc">
+          Elevhälsogaranti, samverkansöverenskommelser med regionens hälso- och sjukvård, samordnande funktion inom elevhälsan, tydligare uppdrag och dimensionering efter behov.
+        </p>
+        <a href="https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2025/11/sou-2025113/" class="source-btn" target="_blank" rel="noopener">
+          Läs SOU 2025:113 <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="ongoing-card">
+        <div class="ongoing-status">Överlämnad januari 2026</div>
+        <div class="ongoing-sou">SOU 2026:4</div>
+        <h3 class="ongoing-card-title">Rektor i fokus</h3>
+        <p class="ongoing-card-desc">
+          Föreslår ny <strong>2 kap. 9 a § skollagen</strong>: huvudmannen ska säkerställa rektorns pedagogiska ledarskap — med hjälp av skolchefen. Rektorns ansvarsområde begränsas. Mandatet stärks.
+        </p>
+        <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/statens-offentliga-utredningar/rektor-i-fokus_heb34/html/" class="source-btn" target="_blank" rel="noopener">
+          Läs SOU 2026:4 <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="ongoing-card">
+        <div class="ongoing-status">Remiss avslutad hösten 2025</div>
+        <div class="ongoing-sou">SOU 2025:72</div>
+        <h3 class="ongoing-card-title">Verktyg för en mer likvärdig resursfördelning till skolan</h3>
+        <p class="ongoing-card-desc">
+          Förslag om nationell skolpengsnorm. Proposition väntas. Påverkar direkt hur skolchefer dimensionerar sin verksamhet.
+        </p>
+        <a href="https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2025/06/sou-202572" class="source-btn" target="_blank" rel="noopener">
+          Läs SOU 2025:72 <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="ongoing-card">
+        <div class="ongoing-status">På remiss · januari 2026</div>
+        <div class="ongoing-sou">SOU 2025:123</div>
+        <h3 class="ongoing-card-title">Skärpta villkor för friskolesektorn — ytterligare förslag</h3>
+        <p class="ongoing-card-desc">
+          Kompletterar tidigare friskoleförslag. Relevant för kommunal samverkan med fristående huvudmän.
+        </p>
+        <a href="https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2026/01/sou-2025123" class="source-btn" target="_blank" rel="noopener">
+          Läs SOU 2025:123 <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="ongoing-card">
+        <div class="ongoing-status">Aviserad · februari 2026</div>
+        <div class="ongoing-sou">Regeringsuppdrag</div>
+        <h3 class="ongoing-card-title">Skärmtid-reform</h3>
+        <p class="ongoing-card-desc">
+          Utbildningsminister Mohamsson har bjudit in riksdagspartierna till samtal om elevers skärmtid. Reformer aviserade men ej beslutade.
+        </p>
+        <a href="https://www.regeringen.se/regeringens-politik/barn--och-ungdomsutbildning/" class="source-btn" target="_blank" rel="noopener">
+          Följ utvecklingen <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="ongoing-card">
+        <div class="ongoing-status">Pågår · Utbildningsdepartementet</div>
+        <div class="ongoing-sou">Förskoleutredningen</div>
+        <h3 class="ongoing-card-title">Svenska språkets ställning i förskolan</h3>
+        <p class="ongoing-card-desc">
+          Förtydligande av svenska språkets ställning i förskolan i skollagen. Regeringen har utökat uppdraget för pågående förskoleutredning.
+        </p>
+        <a href="https://www.regeringen.se/pressmeddelanden/2025/12/regeringen-vill-fortydliga-svenska-sprakets-stallning-i-forskolan/" class="source-btn" target="_blank" rel="noopener">
+          Pressmeddelande <span class="arrow">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOURCES HUB ============ -->
+<section class="hub" id="hub">
+  <div class="hub-inner">
+    <h2 class="hub-title">Källhub</h2>
+    <p class="hub-lede">Centrala sidor att bevaka löpande. De uppdateras i takt med att lagförslagen behandlas i riksdagen och implementeras av Skolverket.</p>
+
+    <div class="hub-grid">
+
+      <a href="https://www.skolverket.se/styrning-och-ansvar/forandringar-inom-skolomradet/aktuella-regelandringar" class="hub-card" target="_blank" rel="noopener">
+        <div class="hub-card-src">Skolverket</div>
+        <div class="hub-card-title">Aktuella regeländringar</div>
+        <div class="hub-card-desc">Uppdateras fortlöpande — den mest praktiska källan för huvudmän.</div>
+      </a>
+
+      <a href="https://www.skolverket.se/styrning-och-ansvar/forandringar-inom-skolomradet/tioarig-grundskola-och-nya-laroplaner" class="hub-card" target="_blank" rel="noopener">
+        <div class="hub-card-src">Skolverket</div>
+        <div class="hub-card-title">Tioårig grundskola & nya läroplaner</div>
+        <div class="hub-card-desc">Skolverkets arbetsprocess, tidslinje och material inför 2028.</div>
+      </a>
+
+      <a href="https://www.regeringen.se/regeringens-politik/regeringens-prioriteringar/skola/" class="hub-card" target="_blank" rel="noopener">
+        <div class="hub-card-src">Regeringen.se</div>
+        <div class="hub-card-title">Regeringens skolprioriteringar</div>
+        <div class="hub-card-desc">Löpande uppdaterad översikt av regeringens skolpolitik.</div>
+      </a>
+
+      <a href="https://www.regeringen.se/artiklar/2026/02/regeringen-genomfor-de-storsta-reformerna-for-skolan-pa-30-ar/" class="hub-card" target="_blank" rel="noopener">
+        <div class="hub-card-src">Regeringen.se</div>
+        <div class="hub-card-title">Reformer på skolans område — sammanfattning</div>
+        <div class="hub-card-desc">Regeringens egen samlingsartikel om reformpaketet.</div>
+      </a>
+
+      <a href="https://skr.se/pressrum/aktuellt/nyhetsarkiv/tioskolreformerutantillrackligfinansieringochtid.10301.html" class="hub-card" target="_blank" rel="noopener">
+        <div class="hub-card-src">SKR</div>
+        <div class="hub-card-title">Tio skolreformer — finansiering och tidplan</div>
+        <div class="hub-card-desc">SKR:s kritik av tidplan och finansiering. Viktig för kommunala huvudmän.</div>
+      </a>
+
+      <a href="https://www.skolledaren.se/aktuellt/nyheter/2026/3/har-ar-alla-utredningar-som-paverkar-skolledare" class="hub-card" target="_blank" rel="noopener">
+        <div class="hub-card-src">Skolledaren.se</div>
+        <div class="hub-card-title">Utredningar som påverkar skolledare</div>
+        <div class="hub-card-desc">Praktisk genomgång ur rektors- och skolchefsperspektiv.</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      Sammanställd översikt — <em>grundskola, förskola, fritidshem</em>
+    </div>
+    <div class="footer-right">
+      Senast uppdaterad · april 2026
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Active year highlight on scroll
+  const sections = document.querySelectorAll('.timeline-section, #ongoing');
+  const yearBtns = document.querySelectorAll('.year-btn');
+
+  const yearMap = {
+    'y2026': '2026',
+    'y2027': '2027',
+    'y2028': '2028',
+    'ongoing': 'Pågående'
+  };
+
+  function updateActiveYear() {
+    const scrollPos = window.scrollY + 150;
+    let activeId = null;
+
+    sections.forEach(section => {
+      if (section.offsetTop <= scrollPos) {
+        activeId = section.id;
+      }
+    });
+
+    yearBtns.forEach(btn => {
+      const href = btn.getAttribute('href').replace('#', '');
+      if (href === activeId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveYear, { passive: true });
+  updateActiveYear();
+
+  // Reveal reforms on scroll
+  const reformCards = document.querySelectorAll('.reform');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+  reformCards.forEach(card => observer.observe(card));
+
+  // Smooth scroll for year nav (fallback för äldre browsers)
+  yearBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = document.querySelector(btn.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+
+<script>
+// Accordion toggle for role-item elements
+(function() {
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.role-item-toggle');
+    if (!btn) return;
+    const li = btn.closest('.role-item');
+    if (!li) return;
+    li.classList.toggle('open');
+    btn.setAttribute('aria-expanded', li.classList.contains('open') ? 'true' : 'false');
+  });
+  // Marker to prevent double-injection: roleItemToggle
+})();
+</script>
+
+</body>
+</html>
